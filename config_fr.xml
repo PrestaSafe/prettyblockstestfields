@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>prettyblockstestfields</name>
+    <displayName><![CDATA[Cartzilla TEST FIELDS]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[This is a test module]]></description>
+    <author><![CDATA[PrestaSafe]]></author>
+    <tab><![CDATA[administration]]></tab>
+    <is_configurable>0</is_configurable>
+    <need_instance>1</need_instance>
+</module>
