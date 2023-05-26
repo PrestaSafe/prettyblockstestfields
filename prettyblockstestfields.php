@@ -67,12 +67,13 @@ class PrettyBlocksTestFields extends Module
                 'tab' => 'Design',
                 'type' => 'color',
                 'default' => 'red',
-                'force_default_value' => true,
+                // 'force_default_value' => true,
                 'label' => $this->l('TEst color fields'),
             ],
             // file upload
             'fileupload' => [
                 'type' => 'fileupload', // type of field
+                'force_default_value' => true,
                 'label' => $this->l('Logo'), // label to display
                 'tab' => 'logo',
                 'path' => '$/modules/'.$this->name.'/views/images/', // path to upload
@@ -104,12 +105,14 @@ class PrettyBlocksTestFields extends Module
             'checkbox' => [
                 'type' => 'checkbox',
                 'label' => $this->l('Use button first banner'),
+                'force_default_value' => true, 
                 'default' => true,
             ],
             // radio_group
             'radio_group' => [
                 'type' => 'radio_group', // type of field
                 'label' => 'Choose a value',  // label to display
+                // 'force_default_value' => true, // force default value
                 'default' => '3', // default value (String)
                 'choices' => [
                     '1' => 'Radio 1',
@@ -122,12 +125,13 @@ class PrettyBlocksTestFields extends Module
                 'type' => 'select',
                 'label' => $this->l('Spacing'),
                 'default' => '3',
+                'force_default_value' => true, // force default value
                 'choices' => [
-                    '1' => 1,
-                    '2' => 2,
-                    '3' => 3,
-                    '4' => 4,
-                    '5' => 5,
+                    '1' => 'Select 1',
+                    '2' => 'Select 2',
+                    '3' => 'Select 3',
+                    '4' => 'Select 4',
+                    '5' => 'Select 5',
                 ],
             ],
             //  selector
@@ -135,7 +139,15 @@ class PrettyBlocksTestFields extends Module
                 'type' => 'selector',
                 'label' => $this->l('Category'),
                 'collection' => 'Category',
-                'default' => 'default value',
+                'force_default_value' => true, // force default value
+                'default' => [
+                    'show' => [
+                        'id' => 3,
+                        'primary' => 3,
+                        'formatted' => '3 - Vêtements',
+                        'name' => 'Vêtements',
+                    ]
+                ],
                 'selector' => '{id} - {name}',
             ],
         ];
@@ -152,7 +164,7 @@ class PrettyBlocksTestFields extends Module
             'code' => 'pretty_test',
             'tab' => 'general',
             'icon' => 'BugAntIcon',
-            'need_reload' => true,
+            'need_reload' => false,
             'templates' => [
                 'default' => 'module:' . $this->name . '/views/templates/blocks/test.tpl',
             ],
