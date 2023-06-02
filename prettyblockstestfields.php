@@ -163,12 +163,13 @@ class PrettyBlocksTestFields extends Module
             'description' => $this->l('For testing all fields values'),
             'code' => 'pretty_test',
             'tab' => 'general',
+            'insert_default_settings' => true,
             'icon' => 'BugAntIcon',
             'need_reload' => false,
             'templates' => [
                 'default' => 'module:' . $this->name . '/views/templates/blocks/test.tpl',
             ],
-            // reapeater
+            // repeater
             'config' => [
                 'fields' => $this->getFieldsToTest()
             ],
