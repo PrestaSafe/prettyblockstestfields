@@ -67,7 +67,7 @@ class PrettyBlocksTestFields extends Module
                 'tab' => 'Design',
                 'type' => 'color',
                 'default' => 'red',
-                // 'force_default_value' => true,
+                'force_default_value' => true,
                 'label' => $this->l('TEst color fields'),
             ],
             // file upload
@@ -86,6 +86,7 @@ class PrettyBlocksTestFields extends Module
                 'tab' => 'design',
                 'type' => 'text',
                 'default' => 'Top',
+                'force_default_value' => true,
                 'label' => $this->l('Top button text'),
             ],
             // textarea
@@ -93,12 +94,14 @@ class PrettyBlocksTestFields extends Module
                 'tab' => 'design',
                 'type' => 'textarea',
                 'default' => 'Top',
+                'force_default_value' => true,
                 'label' => $this->l('Top button text'),
             ],
             // editor
             'editor' => [
                 'type' => 'editor', // type of field
                 'label' => 'Editor', // label to display
+                'force_default_value' => true,
                 'default' => '<p>Hello <strong>World</strong> !' // default HTML value
             ],
             //  checkbox
@@ -112,7 +115,7 @@ class PrettyBlocksTestFields extends Module
             'radio_group' => [
                 'type' => 'radio_group', // type of field
                 'label' => 'Choose a value',  // label to display
-                // 'force_default_value' => true, // force default value
+                'force_default_value' => true, // force default value
                 'default' => '3', // default value (String)
                 'choices' => [
                     '1' => 'Radio 1',
