@@ -48,7 +48,18 @@
                     <th scope="row">selector</th>
                     <td>{var_dump($block.settings.selector)}</td>
                 </tr>
+
+                <tr>
+                    <th scope="row">title</th>
+                    <td>{$block.settings.title nofilter}</td>
+                </tr>
                 
             </tbody>
         </table>
+</div>
+
+
+
+<div class="container">
+    {prettyblocks_title block=$block field="title"}    
 </div>

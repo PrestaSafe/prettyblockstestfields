@@ -153,6 +153,18 @@ class PrettyBlocksTestFields extends Module
                 ],
                 'selector' => '{id} - {name}',
             ],
+
+            // title field
+            'title' => [
+                'type' => 'title',
+                'label' => $this->l('Title'),
+                'force_default_value' => true, // force default value
+                'default' => [
+                    'tag' => 'h2',
+                    'classes' => [],
+                    'value' => 'Title',
+                ],
+            ],
         ];
     }
 
