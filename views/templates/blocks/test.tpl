@@ -1,4 +1,4 @@
-
+<h3 class="editMe">TestHere!</h3>
 
 <div class="{if $block.settings.default.container} container {/if}"
     style="{if $block.settings.default.bg_color} background-color: {$block.settings.default.bg_color}; {/if}">
