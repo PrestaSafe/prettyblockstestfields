@@ -1,4 +1,6 @@
-<h3 class="editMe">TestHere!</h3>
+{* <div class="container pt-5">
+    {prettyblocks_title tag="h1" value_from_block=true block=$block field="title"}    
+</div> *}
 
 <div class="{if $block.settings.default.container} container {/if}"
     style="{if $block.settings.default.bg_color} background-color: {$block.settings.default.bg_color}; {/if}">
@@ -49,17 +51,14 @@
                     <td>{var_dump($block.settings.selector)}</td>
                 </tr>
 
-                <tr>
+                {* <tr>
                     <th scope="row">title</th>
                     <td>{$block.settings.title nofilter}</td>
                 </tr>
-                
+                 *}
             </tbody>
         </table>
 </div>
 
 
 
-<div class="container">
-    {prettyblocks_title block=$block field="title"}    
-</div>

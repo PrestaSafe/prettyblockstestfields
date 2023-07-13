@@ -4,7 +4,9 @@
 if (!defined('_PS_VERSION_')) {
     exit;
 }
-
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
 
 class PrettyBlocksTestFields extends Module
 {
@@ -59,7 +61,7 @@ class PrettyBlocksTestFields extends Module
         
     }
 
-    private function getFieldsToTest()
+    public function getFieldsToTest()
     {
         return [
             //  color
@@ -162,7 +164,13 @@ class PrettyBlocksTestFields extends Module
                 'default' => [
                     'tag' => 'h2',
                     'classes' => [],
-                    'value' => 'Title',
+                    'value' => "ferfezfzefczedfedezdzefezzdf",
+                    'focus' => false,
+                    'inside' => false,
+                    'bold' => false,
+                    'italic' => false,
+                    'underline' => false,
+                    'size' => 18,
                 ],
             ],
         ];
@@ -170,33 +178,9 @@ class PrettyBlocksTestFields extends Module
 
     public function hookActionRegisterBlock()
     {
-        $blocks = [];
-
-        // spacing block
-        $blocks[] = [
-            'name' => $this->l('PrettyBlocks TEST'),
-            'description' => $this->l('For testing all fields values'),
-            'code' => 'pretty_test',
-            'tab' => 'general',
-            'insert_default_settings' => true,
-            'icon' => 'BugAntIcon',
-            'need_reload' => false,
-            'templates' => [
-                'default' => 'module:' . $this->name . '/views/templates/blocks/test.tpl',
-            ],
-            // repeater
-            'config' => [
-                'fields' => $this->getFieldsToTest()
-            ],
-            // reapeater
-            'repeater' => [
-                'name' => 'Element repeated',
-                'nameFrom' => 'title',
-                'groups' => $this->getFieldsToTest()
-            ]
-
-        ];
-        return $blocks;
+        return HelperBuilder::renderBlocks([
+                new PrettyBlocksTestFieldsBlocks($this)
+        ]);
     }
 
 
