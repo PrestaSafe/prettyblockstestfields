@@ -1,1 +1,13 @@
 views/images/*
+config_*.xml
+build/
+vendor/
+node_modules/
+**/node_modules
+.vscode/
+views/images/*
+!views/images/favicon.ico
+**.DS_Store**
+test.php
+.php-cs-fixer.cache
+_dev/yarn.lock
