@@ -139,6 +139,22 @@ class PrettyBlocksTestFields extends Module
                     '5' => 'Select 5',
                 ],
             ],
+
+             //  select
+             'multiselect' => [
+                'type' => 'multiselect',
+                'label' => $this->l('Multiple select'),
+                'default' => ["1","2"],
+                'force_default_value' => true, // force default value
+                'choices' => [
+                    '1' => 'Select 1',
+                    '2' => 'Select 2',
+                    '3' => 'Select 3',
+                    '4' => 'Select 4',
+                    '5' => 'Select 5',
+                ],
+            ],
+
             //  selector
             'selector' => [
                 'type' => 'selector',

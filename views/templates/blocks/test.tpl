@@ -47,6 +47,13 @@
                     <td>{$block.settings.select}</td>
                 </tr>
                 <tr>
+                    <th scope="row">multiselect</th>
+                    <td>{foreach from=$block.settings.multiselect item=multi}
+                        Seleted: <strong>{$multi}</strong><br>
+                        {/foreach}
+                    </td>
+                </tr>
+                <tr>
                     <th scope="row">selector</th>
                     <td>{var_dump($block.settings.selector)}</td>
                 </tr>
