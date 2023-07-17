@@ -42,6 +42,7 @@ class PrettyBlocksTestFieldsBlocks implements BlockInterface
             'need_reload' => false,
             'templates' => [
                 'default' => 'module:' . $this->module->name . '/views/templates/blocks/test.tpl',
+                'reverse' => 'module:' . $this->module->name . '/views/templates/blocks/reverse.tpl',
             ],
             // repeater
             'config' => [
