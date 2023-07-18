@@ -1,6 +1,6 @@
-{* <div class="container pt-5">
-    {prettyblocks_title tag="h1" value_from_block=true block=$block field="title"}    
-</div> *}
+<div class="container pt-5">
+    {prettyblocks_title value_from_block=true block=$block field="title"}    
+</div>
 
 <div class="{if $block.settings.default.container} container {/if}"
     style="{if $block.settings.default.bg_color} background-color: {$block.settings.default.bg_color}; {/if}">
@@ -19,6 +19,7 @@
                 <tr>
                     <th scope="row">fileupload</th>
                     <td>
+                    {dump($block.settings.fileupload)}
                         <img src="{$block.settings.fileupload.url}" alt="">
                     </td>
                 </tr>
