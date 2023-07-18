@@ -19,7 +19,6 @@
                 <tr>
                     <th scope="row">fileupload</th>
                     <td>
-                    {dump($block.settings.fileupload)}
                         <img src="{$block.settings.fileupload.url}" alt="">
                     </td>
                 </tr>
