@@ -4,7 +4,9 @@
 if (!defined('_PS_VERSION_')) {
     exit;
 }
-
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
 
 class PrettyBlocksTestFields extends Module
 {
@@ -59,7 +61,7 @@ class PrettyBlocksTestFields extends Module
         
     }
 
-    private function getFieldsToTest()
+    public function getFieldsToTest()
     {
         return [
             //  color
@@ -137,6 +139,22 @@ class PrettyBlocksTestFields extends Module
                     '5' => 'Select 5',
                 ],
             ],
+
+             //  select
+             'multiselect' => [
+                'type' => 'multiselect',
+                'label' => $this->l('Multiple select'),
+                'default' => ["1","2"],
+                'force_default_value' => true, // force default value
+                'choices' => [
+                    '1' => 'Select 1',
+                    '2' => 'Select 2',
+                    '3' => 'Select 3',
+                    '4' => 'Select 4',
+                    '5' => 'Select 5',
+                ],
+            ],
+
             //  selector
             'selector' => [
                 'type' => 'selector',
@@ -153,38 +171,32 @@ class PrettyBlocksTestFields extends Module
                 ],
                 'selector' => '{id} - {name}',
             ],
+
+            // title field
+            'title' => [
+                'type' => 'title',
+                'label' => $this->l('Title'),
+                'force_default_value' => true, // force default value
+                'default' => [
+                    'tag' => 'h2',
+                    'classes' => [],
+                    'value' => "ferfezfzefczedfedezdzefezzdf",
+                    'focus' => false,
+                    'inside' => false,
+                    'bold' => false,
+                    'italic' => false,
+                    'underline' => false,
+                    'size' => 18,
+                ],
+            ],
         ];
     }
 
     public function hookActionRegisterBlock()
     {
-        $blocks = [];
-
-        // spacing block
-        $blocks[] = [
-            'name' => $this->l('PrettyBlocks TEST'),
-            'description' => $this->l('For testing all fields values'),
-            'code' => 'pretty_test',
-            'tab' => 'general',
-            'insert_default_settings' => true,
-            'icon' => 'BugAntIcon',
-            'need_reload' => false,
-            'templates' => [
-                'default' => 'module:' . $this->name . '/views/templates/blocks/test.tpl',
-            ],
-            // repeater
-            'config' => [
-                'fields' => $this->getFieldsToTest()
-            ],
-            // reapeater
-            'repeater' => [
-                'name' => 'Element repeated',
-                'nameFrom' => 'title',
-                'groups' => $this->getFieldsToTest()
-            ]
-
-        ];
-        return $blocks;
+        return HelperBuilder::renderBlocks([
+                new PrettyBlocksTestFieldsBlocks($this)
+        ]);
     }
 
 

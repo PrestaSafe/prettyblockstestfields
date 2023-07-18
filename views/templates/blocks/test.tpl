@@ -1,4 +1,6 @@
-
+<div class="container pt-5">
+    {prettyblocks_title value_from_block=true block=$block field="title"}    
+</div>
 
 <div class="{if $block.settings.default.container} container {/if}"
     style="{if $block.settings.default.bg_color} background-color: {$block.settings.default.bg_color}; {/if}">
@@ -45,10 +47,25 @@
                     <td>{$block.settings.select}</td>
                 </tr>
                 <tr>
+                    <th scope="row">multiselect</th>
+                    <td>{foreach from=$block.settings.multiselect item=multi}
+                        Seleted: <strong>{$multi}</strong><br>
+                        {/foreach}
+                    </td>
+                </tr>
+                <tr>
                     <th scope="row">selector</th>
                     <td>{var_dump($block.settings.selector)}</td>
                 </tr>
-                
+
+                {* <tr>
+                    <th scope="row">title</th>
+                    <td>{$block.settings.title nofilter}</td>
+                </tr>
+                 *}
             </tbody>
         </table>
 </div>
+
+
+
