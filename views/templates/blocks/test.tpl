@@ -1,5 +1,5 @@
 <div class="container pt-5">
-    {prettyblocks_title value_from_block=true block=$block field="title"}    
+    {prettyblocks_title block=$block field="title"}    
 </div>
 
 <div class="{if $block.settings.default.container} container {/if}"
