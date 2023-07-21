@@ -32,6 +32,7 @@ class PrettyBlocksTestFieldsBlocks implements BlockInterface
 
     public function registerBlocks(): array
     {
+        $logo = HelperBuilder::pathFormattedToUrl('$/modules/'.$this->module->name.'/logo.png');
         return [
             'name' => $this->module->l('PrettyBlocks TEST'),
             'description' => $this->module->l('For testing all fields values'),
@@ -39,6 +40,7 @@ class PrettyBlocksTestFieldsBlocks implements BlockInterface
             'tab' => 'general',
             'insert_default_settings' => true,
             'icon' => 'BugAntIcon',
+            'logo' => $logo,
             'need_reload' => false,
             'templates' => [
                 'default' => 'module:' . $this->module->name . '/views/templates/blocks/test.tpl',

@@ -123,6 +123,7 @@ class PrettyBlocksTestFields extends Module
                     '1' => 'Radio 1',
                     '2' => 'Radio 2',
                     '3' => 'Radio 3',
+                    '4' => "Radio '4",
                 ]
             ],
             //  select
