@@ -40,7 +40,7 @@ class PrettyBlocksTestFieldsBlocks implements BlockInterface
             'tab' => 'general',
             'insert_default_settings' => true,
             'icon' => 'BugAntIcon',
-            'logo' => $logo,
+            'icon_path' => $logo,
             'need_reload' => false,
             'templates' => [
                 'default' => 'module:' . $this->module->name . '/views/templates/blocks/test.tpl',
