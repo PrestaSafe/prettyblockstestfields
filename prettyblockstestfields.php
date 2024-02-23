@@ -103,6 +103,8 @@ class PrettyBlocksTestFields extends Module
             'editor' => [
                 'type' => 'editor', // type of field
                 'label' => 'Editor', // label to display
+                // 'provider' => 'tinymce',
+                'provider' => 'vuequill',
                 'force_default_value' => true,
                 'default' => '<p>Hello <strong>World</strong> !' // default HTML value
             ],
