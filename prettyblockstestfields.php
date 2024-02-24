@@ -64,6 +64,13 @@ class PrettyBlocksTestFields extends Module
     public function getFieldsToTest()
     {
         return [
+            // date 
+            'date' => [
+                'type' => 'datepicker',
+                'default' => date('Y-m-d'),
+                'force_default_value' => true,
+                'label' => $this->l('Date picker'),
+            ], 
             //  color
             'color' => [
                 'tab' => 'Design',
