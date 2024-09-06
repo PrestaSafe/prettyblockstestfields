@@ -38,9 +38,9 @@ class PrettyBlocksTestFields extends Module
         return true;
     }
 
-  
 
-    
+
+
 
     public function uninstall()
     {
@@ -53,24 +53,33 @@ class PrettyBlocksTestFields extends Module
         $this->unregisterHook('beforeRenderingblockCategoryProducts');
     }
 
-    
+
     public function hookActionRegisterThemeSettings()
     {
-      
+
         return $this->getFieldsToTest();
-        
+
     }
 
     public function getFieldsToTest()
     {
         return [
-            // date 
+            // date
             'date' => [
                 'type' => 'datepicker',
                 'default' => date('Y-m-d'),
                 'force_default_value' => true,
                 'label' => $this->l('Date picker'),
-            ], 
+            ],
+            'slider' => [
+                'type' => 'slider',
+                'default' => 10,
+                'min' => 0,
+                'max' => 100,
+                'step' => 1,
+                'force_default_value' => true,
+                'label' => $this->l('Date picker'),
+            ],
             //  color
             'color' => [
                 'tab' => 'Design',
@@ -119,7 +128,7 @@ class PrettyBlocksTestFields extends Module
             'checkbox' => [
                 'type' => 'checkbox',
                 'label' => $this->l('Use button first banner'),
-                'force_default_value' => true, 
+                'force_default_value' => true,
                 'default' => true,
             ],
             // radio_group
