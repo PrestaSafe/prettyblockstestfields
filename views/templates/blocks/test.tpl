@@ -12,6 +12,20 @@
                 </tr>
             </thead>
             <tbody>
+            <tr>
+                <th scope="row"><code>$block.container</code></th>
+                    <td><code>{$block.settings.default.container}</code></td>
+                </tr>
+                <th scope="row"><code>$block.force_full_width</code></th>
+                    <td><code>{$block.settings.default.force_full_width}</code></td>
+                </tr>
+                <th scope="row"><code>$block.classes</code></th>
+                    <td><code>{$block.classes}</code></td>
+                </tr>
+                <tr>
+                    <th scope="row"><code>$block.styles</code></th>
+                    <td><code>{$block.styles}</code></td>
+                </tr>
                 <tr>
                     <th scope="row">date</th>
                     <td>{$block.settings.date} FR => {$block.settings.date|date_format:"%d/%m/%Y"}</td>
