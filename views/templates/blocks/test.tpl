@@ -13,6 +13,14 @@
             </thead>
             <tbody>
                 <tr>
+                    <th scope="row">date</th>
+                    <td>{$block.settings.date} FR => {$block.settings.date|date_format:"%d/%m/%Y"}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Slider</th>
+                    <td>{$block.settings.slider}</td>
+                </tr>
+                <tr>
                     <th scope="row">color</th>
                     <td style="background-color: {$block.settings.color}; color: white">{$block.settings.color}</td>
                 </tr>

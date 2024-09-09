@@ -78,7 +78,7 @@ class PrettyBlocksTestFields extends Module
                 'max' => 100,
                 'step' => 1,
                 'force_default_value' => true,
-                'label' => $this->l('Date picker'),
+                'label' => $this->l('Slider'),
             ],
             //  color
             'color' => [
