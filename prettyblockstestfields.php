@@ -96,7 +96,7 @@ class PrettyBlocksTestFields extends Module
                 'tab' => 'logo',
                 'path' => '$/modules/'.$this->name.'/views/images/', // path to upload
                 'default' => [
-                    'url' => 'https://via.placeholder.com/200x200',
+                    'url' => 'https://placehold.co/500x500',
                 ],
             ],
             //  text
